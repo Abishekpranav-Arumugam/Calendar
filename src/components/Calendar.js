@@ -219,9 +219,14 @@ const Calendar = ({ events }) => {
             >
               <div className="flex justify-center items-center">
                 <span
-                  className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-xs sm:text-sm ${
-                    isToday ? 'bg-blue-500 text-white font-bold' : ''
-                  }`}
+                  className={
+                    `w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-xs sm:text-sm font-bold
+                    ${isToday ? 'bg-blue-500 text-white' : ''}
+                    ${!isToday && isCurrentMonth && (day.day() === 0 || day.day() === 6) ? 'text-red-500' : ''}
+                    ${!isToday && !isCurrentMonth && (day.day() === 0 || day.day() === 6) ? 'text-red-300' : ''}
+                    ${!isCurrentMonth && !(day.day() === 0 || day.day() === 6) ? 'text-gray-400' : ''}
+                    `
+                  }
                 >
                   {day.date()}
                 </span>

@@ -245,22 +245,22 @@ const Calendar = ({ events }) => {
                 </span>
               </div>
               <div className="mt-1 overflow-hidden text-[10px] sm:text-xs space-y-1 flex-1">
-                {processedEvents.slice(0, 2).map((event) => (
+                {processedEvents.length > 0 && (
                   <div
-                    key={event.title + event.time}
+                    key={processedEvents[0].title + processedEvents[0].time}
                     className="relative bg-white rounded-md shadow flex items-center cursor-pointer border border-gray-200 pr-1 pl-2 py-0.5 mb-1 min-h-[1.5rem] hover:shadow-md transition group"
-                    style={{ borderLeft: `4px solid ${event.color}` }}
-                    title={event.title}
-                    onClick={() => handleSelectEvent(event)}
+                    style={{ borderLeft: `4px solid ${processedEvents[0].color}` }}
+                    title={processedEvents[0].title}
+                    onClick={() => handleSelectEvent(processedEvents[0])}
                   >
                     <div className="flex-1">
                       <div className="font-semibold text-gray-800 text-[9px] sm:text-xs truncate max-w-[110px] sm:max-w-[140px] group-hover:text-blue-700">
-                        {event.title}
+                        {processedEvents[0].title}
                       </div>
                     </div>
                   </div>
-                ))}
-                {processedEvents.length > 2 && (
+                )}
+                {processedEvents.length > 1 && (
                   <div
                     className="text-blue-500 text-xs cursor-pointer underline"
                     onClick={() => {

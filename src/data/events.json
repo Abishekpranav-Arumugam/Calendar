@@ -1,0 +1,234 @@
+[
+  {
+    "title": "May Planning",
+    "date": "2024-05-03",
+    "time": "09:00",
+    "duration": 60,
+    "description": "Monthly planning meeting for May",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Design Sprint",
+    "date": "2024-05-06",
+    "time": "11:00",
+    "duration": 120,
+    "description": "Kickoff for the design sprint",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Team Lunch",
+    "date": "2024-05-14",
+    "time": "13:00",
+    "duration": 90,
+    "description": "Team lunch at local restaurant",
+    "color": "#10b981"
+  },
+  {
+    "title": "Release Review",
+    "date": "2024-05-22",
+    "time": "15:00",
+    "duration": 60,
+    "description": "Review the May release",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "June Kickoff",
+    "date": "2024-06-01",
+    "time": "10:00",
+    "duration": 60,
+    "description": "Kickoff meeting for June",
+    "color": "#6366f1"
+  },
+  {
+    "title": "Sprint Planning",
+    "date": "2024-06-05",
+    "time": "09:30",
+    "duration": 90,
+    "description": "Sprint planning for June",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Client Demo",
+    "date": "2024-06-13",
+    "time": "14:00",
+    "duration": 60,
+    "description": "Demo for the client",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Team Outing",
+    "date": "2024-06-21",
+    "time": "12:00",
+    "duration": 180,
+    "description": "Team outing and fun activities",
+    "color": "#10b981"
+  },
+  {
+    "title": "Team Standup",
+    "date": "2024-07-02",
+    "time": "10:00",
+    "duration": 30,
+    "description": "Daily team sync-up meeting",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "Project Kickoff",
+    "date": "2024-07-07",
+    "time": "11:00",
+    "duration": 60,
+    "description": "Initial meeting to start the new project",
+    "color": "#6366f1"
+  },
+  {
+    "title": "Design Review",
+    "date": "2024-07-15",
+    "time": "14:00",
+    "duration": 90,
+    "description": "Review the latest design mockups",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Client Call",
+    "date": "2024-07-19",
+    "time": "15:00",
+    "duration": 45,
+    "description": "Call with the client to discuss requirements",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Urgent Sync",
+    "date": "2024-07-27",
+    "time": "14:15",
+    "duration": 60,
+    "description": "Urgent team sync to resolve blockers",
+    "color": "#10b981"
+  },
+  {
+    "title": "Product Demo",
+    "date": "2024-08-05",
+    "time": "13:00",
+    "duration": 60,
+    "description": "Demonstration of the new product features",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "1-on-1 with Manager",
+    "date": "2024-08-12",
+    "time": "16:00",
+    "duration": 30,
+    "description": "Monthly one-on-one meeting with your manager",
+    "color": "#6366f1"
+  },
+  {
+    "title": "March Strategy Session",
+    "date": "2025-03-03",
+    "time": "10:00",
+    "duration": 90,
+    "description": "Strategy session for Q1 2025",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Spring Hackathon",
+    "date": "2025-03-08",
+    "time": "09:00",
+    "duration": 240,
+    "description": "Annual spring hackathon",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Budget Review",
+    "date": "2025-03-17",
+    "time": "15:00",
+    "duration": 60,
+    "description": "Quarterly budget review",
+    "color": "#10b981"
+  },
+  {
+    "title": "March All-Hands",
+    "date": "2025-03-28",
+    "time": "11:00",
+    "duration": 60,
+    "description": "Company-wide all-hands meeting",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "June Townhall",
+    "date": "2025-06-04",
+    "time": "09:00",
+    "duration": 60,
+    "description": "Monthly townhall meeting",
+    "color": "#6366f1"
+  },
+  {
+    "title": "Design Review",
+    "date": "2025-06-04",
+    "time": "11:00",
+    "duration": 45,
+    "description": "Review design proposals",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Client Call",
+    "date": "2025-06-04",
+    "time": "14:00",
+    "duration": 30,
+    "description": "Call with client",
+    "color": "#10b981"
+  },
+  {
+    "title": "Mid-Year Review",
+    "date": "2025-06-12",
+    "time": "14:00",
+    "duration": 120,
+    "description": "Mid-year performance review",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Team Picnic",
+    "date": "2025-06-18",
+    "time": "12:00",
+    "duration": 180,
+    "description": "Outdoor team picnic",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Client Workshop",
+    "date": "2025-06-29",
+    "time": "09:30",
+    "duration": 90,
+    "description": "Workshop with key clients",
+    "color": "#10b981"
+  },
+  {
+    "title": "July Planning",
+    "date": "2025-07-01",
+    "time": "09:00",
+    "duration": 60,
+    "description": "Monthly planning meeting for July",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "Product Launch",
+    "date": "2025-07-10",
+    "time": "11:00",
+    "duration": 120,
+    "description": "Launch of the new product line",
+    "color": "#6366f1"
+  },
+  {
+    "title": "Team Building",
+    "date": "2025-07-18",
+    "time": "13:00",
+    "duration": 90,
+    "description": "Team building activities",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Release Party",
+    "date": "2025-07-25",
+    "time": "17:00",
+    "duration": 120,
+    "description": "Celebration party for the product release",
+    "color": "#3b82f6"
+  }
+]

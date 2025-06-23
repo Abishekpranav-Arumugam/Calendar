@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import dayjs from 'dayjs';
 
 // Helper function to generate an array of days for the calendar grid
@@ -22,6 +22,8 @@ const Calendar = ({ events }) => {
   const [modalEvents, setModalEvents] = useState(null);
   const [modalDay, setModalDay] = useState(null);
 
+  const calendarTopRef = useRef(null);
+
   // For year range, you can adjust as needed
   const years = [];
   for (let y = 1990; y <= 2035; y++) years.push(y);
@@ -43,8 +45,16 @@ const Calendar = ({ events }) => {
   const calendarDays = useMemo(() => generateCalendarDays(currentDate), [currentDate]);
   const today = dayjs();
 
+  // Helper to select event and scroll to top
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+    if (calendarTopRef.current) {
+      calendarTopRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="p-2 sm:p-4 bg-white rounded-lg shadow-lg w-full font-sans max-w-5xl mx-auto">
+    <div ref={calendarTopRef} className="p-2 sm:p-4 bg-white rounded-lg shadow-lg w-full font-sans max-w-5xl mx-auto">
       {/* Modal for all events on a day */}
       {modalEvents && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
@@ -213,32 +223,35 @@ const Calendar = ({ events }) => {
           return (
             <div
               key={index}
-              className={`border rounded-md p-1 sm:p-2 min-h-[4.5rem] sm:min-h-[6.5rem] flex flex-col transition-colors ${
-                isCurrentMonth ? 'bg-white' : 'bg-gray-50 text-gray-400'
-              } ${isToday ? 'border-blue-500' : 'border-gray-200'}`}
+              className={`border rounded-md p-1 sm:p-2 bg-white flex flex-col transition-colors
+                ${isCurrentMonth ? '' : 'bg-gray-50 text-gray-400'}
+                ${isToday ? 'border-blue-500' : 'border-gray-200'}
+                `}
+              style={{
+                height: '6.5rem', // fixed height for all cells (adjust as needed)
+                overflow: 'hidden'
+              }}
             >
               <div className="flex justify-center items-center">
                 <span
-                  className={
-                    `w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-xs sm:text-sm font-bold
+                  className={`w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-xs sm:text-sm font-bold
                     ${isToday ? 'bg-blue-500 text-white' : ''}
                     ${!isToday && isCurrentMonth && (day.day() === 0 || day.day() === 6) ? 'text-red-500' : ''}
                     ${!isToday && !isCurrentMonth && (day.day() === 0 || day.day() === 6) ? 'text-red-300' : ''}
                     ${!isCurrentMonth && !(day.day() === 0 || day.day() === 6) ? 'text-gray-400' : ''}
-                    `
-                  }
+                  `}
                 >
                   {day.date()}
                 </span>
               </div>
-              <div className="mt-1 overflow-y-auto overflow-x-hidden text-[10px] sm:text-xs space-y-1">
+              <div className="mt-1 overflow-hidden text-[10px] sm:text-xs space-y-1 flex-1">
                 {processedEvents.slice(0, 2).map((event) => (
                   <div
                     key={event.title + event.time}
                     className="relative bg-white rounded-md shadow flex items-center cursor-pointer border border-gray-200 pr-1 pl-2 py-0.5 mb-1 min-h-[1.5rem] hover:shadow-md transition group"
                     style={{ borderLeft: `4px solid ${event.color}` }}
                     title={event.title}
-                    onClick={() => setSelectedEvent(event)}
+                    onClick={() => handleSelectEvent(event)}
                   >
                     <div className="flex-1">
                       <div className="font-semibold text-gray-800 text-[9px] sm:text-xs truncate max-w-[110px] sm:max-w-[140px] group-hover:text-blue-700">

@@ -7,7 +7,7 @@ function App() {
     <div className="min-h-screen bg-gray-100 py-8">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
-          My Calendar Application
+          My Calendar
         </h1>
         <Calendar events={eventsData} />
       </div>

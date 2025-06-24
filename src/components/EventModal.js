@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 
-const EventModal = ({ modalEvents, modalDay, setModalEvents, setSelectedEvent }) => {
+const EventModal = ({ modalEvents, modalDay, setModalEvents, setSelectedEvent, handleDeleteEvent }) => {
   if (!modalEvents) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
@@ -20,14 +20,14 @@ const EventModal = ({ modalEvents, modalDay, setModalEvents, setSelectedEvent })
           {modalEvents.map(event => (
             <div
               key={event.title + event.time}
-              className="flex items-center bg-gray-50 border-l-4 rounded p-2 cursor-pointer hover:bg-blue-50 transition"
+              className="flex items-center bg-gray-50 border-l-4 rounded p-2 cursor-pointer hover:bg-blue-50 transition relative"
               style={{ borderColor: event.color }}
               onClick={() => {
                 setSelectedEvent(event);
                 setModalEvents(null);
               }}
             >
-              <div>
+              <div className="flex-1">
                 <div className="font-semibold text-gray-800 text-xs truncate">{event.title}</div>
                 <div className="text-[11px] text-gray-500">
                   {event.time} - {event.end.format('HH:mm')}

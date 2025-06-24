@@ -63,10 +63,23 @@ const Calendar = ({ events }) => {
       setAlertMsg('This event overlaps with an existing event on this day.');
       return;
     }
-    const updatedEvents = [...localEvents, newEvent];
+    const updatedEvents = [...localEvents, { ...newEvent, isLocal: true }];
     setLocalEvents(updatedEvents);
     localStorage.setItem('calendarEvents', JSON.stringify(updatedEvents));
     setShowCreateModal(false);
+  };
+
+  const handleDeleteEvent = (eventToDelete) => {
+    const updatedEvents = localEvents.filter(ev =>
+      !(
+        ev.title === eventToDelete.title &&
+        ev.date === eventToDelete.date &&
+        ev.time === eventToDelete.time &&
+        ev.isLocal // Only delete if isLocal
+      )
+    );
+    setLocalEvents(updatedEvents);
+    localStorage.setItem('calendarEvents', JSON.stringify(updatedEvents));
   };
 
   return (
@@ -77,7 +90,11 @@ const Calendar = ({ events }) => {
         setModalEvents={setModalEvents}
         setSelectedEvent={handleSelectEvent}
       />
-      <EventDetails selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent} />
+      <EventDetails
+        selectedEvent={selectedEvent}
+        setSelectedEvent={setSelectedEvent}
+        handleDeleteEvent={handleDeleteEvent}
+      />
       <CalendarHeader
         currentDate={currentDate}
         setCurrentDate={setCurrentDate}
@@ -98,7 +115,7 @@ const Calendar = ({ events }) => {
             day={day}
             currentDate={currentDate}
             today={today}
-            events={localEvents} // <-- Fix here
+            events={localEvents}
             handleSelectEvent={handleSelectEvent}
             setModalEvents={setModalEvents}
             setModalDay={setModalDay}

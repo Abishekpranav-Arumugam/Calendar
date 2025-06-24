@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 
-const EventDetails = ({ selectedEvent, setSelectedEvent }) => {
+const EventDetails = ({ selectedEvent, setSelectedEvent, handleDeleteEvent }) => {
   if (!selectedEvent) return null;
   return (
     <div className="mb-4 sm:mb-8 p-4 sm:p-6 rounded-xl border border-gray-200 bg-white shadow flex flex-col md:flex-row md:items-center md:justify-between relative overflow-hidden">
@@ -27,12 +27,31 @@ const EventDetails = ({ selectedEvent, setSelectedEvent }) => {
           </div>
         </div>
       </div>
-      <button
-        className="absolute top-4 right-4 px-3 py-1 bg-gray-100 text-gray-700 rounded transition font-semibold shadow hover:bg-red-500 hover:text-white"
-        onClick={() => setSelectedEvent(null)}
-      >
-        Close
-      </button>
+      <div className="absolute top-4 right-4 flex gap-2">
+        <button
+          className="px-3 py-1 bg-gray-100 text-gray-700 rounded transition font-semibold shadow hover:bg-red-500 hover:text-white"
+          onClick={() => setSelectedEvent(null)}
+        >
+          Close
+        </button>
+        <button
+          className={`px-3 py-1 rounded transition font-semibold shadow flex items-center gap-1
+            ${selectedEvent.isLocal ? 'bg-red-100 hover:bg-red-200' : 'bg-gray-200 cursor-not-allowed'}
+          `}
+          onClick={() => {
+            if (selectedEvent.isLocal && handleDeleteEvent) {
+              handleDeleteEvent(selectedEvent);
+              setSelectedEvent(null);
+            }
+          }}
+          disabled={!selectedEvent.isLocal}
+          title={selectedEvent.isLocal ? 'Delete Event' : 'Only local events can be deleted'}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };

@@ -30,6 +30,7 @@ const Calendar = ({ events }) => {
     return stored ? JSON.parse(stored) : events;
   });
   const [alertMsg, setAlertMsg] = useState('');
+  const [editEvent, setEditEvent] = useState(null);
   const calendarTopRef = useRef(null);
 
   const years = [];
@@ -82,8 +83,33 @@ const Calendar = ({ events }) => {
     localStorage.setItem('calendarEvents', JSON.stringify(updatedEvents));
   };
 
+  const handleUpdateEvent = (updatedEvent, originalEvent) => {
+    const updatedEvents = localEvents.map(ev =>
+      ev.title === originalEvent.title &&
+      ev.date === originalEvent.date &&
+      ev.time === originalEvent.time &&
+      ev.isLocal
+        ? { ...updatedEvent, isLocal: true }
+        : ev
+    );
+    setLocalEvents(updatedEvents);
+    localStorage.setItem('calendarEvents', JSON.stringify(updatedEvents));
+    setEditEvent(null);
+    setSelectedEvent(null);
+  };
+
   return (
-    <div ref={calendarTopRef} className="p-2 sm:p-4 bg-white rounded-lg shadow-lg w-full font-sans max-w-5xl mx-auto">
+    <div
+      ref={calendarTopRef}
+      className="relative p-2 sm:p-4 rounded-lg shadow-lg w-full font-sans max-w-5xl mx-auto overflow-hidden bg-white/70"
+    >
+      {/* Animated background */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-blue-300 rounded-full opacity-30 animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 bg-pink-300 rounded-full opacity-30 animate-pulse-slower"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-purple-300 rounded-full opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-10 left-1/4 w-20 h-20 bg-green-300 rounded-full opacity-20 animate-pulse"></div>
+      </div>
       <EventModal
         modalEvents={modalEvents}
         modalDay={modalDay}
@@ -94,6 +120,7 @@ const Calendar = ({ events }) => {
         selectedEvent={selectedEvent}
         setSelectedEvent={setSelectedEvent}
         handleDeleteEvent={handleDeleteEvent}
+        onEdit={() => setEditEvent(selectedEvent)}
       />
       <CalendarHeader
         currentDate={currentDate}
@@ -122,6 +149,14 @@ const Calendar = ({ events }) => {
           />
         ))}
       </div>
+      {editEvent && (
+        <CreateEventModal
+          event={editEvent}
+          onClose={() => setEditEvent(null)}
+          onCreate={handleUpdateEvent}
+          isEdit
+        />
+      )}
       {showCreateModal && (
         <CreateEventModal
           onClose={() => setShowCreateModal(false)}

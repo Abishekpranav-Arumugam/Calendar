@@ -9,18 +9,26 @@ const CalendarHeader = ({
   years
 }) => (
   <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
-    <div className="flex flex-row sm:flex-row gap-2 w-full sm:w-auto justify-between">
+    <div className="flex flex-row gap-2 w-full sm:w-auto justify-between">
       <button
         onClick={() => setCurrentDate(currentDate.subtract(1, 'month'))}
-        className="px-3 py-1 text-xs sm:text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
+        className="p-2 text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center"
+        aria-label="Previous Month"
       >
-        Previous
+        {/* Left Arrow SVG */}
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
       </button>
       <button
         onClick={() => setCurrentDate(currentDate.add(1, 'month'))}
-        className="px-3 py-1 text-xs sm:text-sm text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
+        className="p-2 text-gray-600 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center"
+        aria-label="Next Month"
       >
-        Next
+        {/* Right Arrow SVG */}
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
       </button>
     </div>
     <div className="relative w-full sm:w-auto flex justify-center">

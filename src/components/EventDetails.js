@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 
-const EventDetails = ({ selectedEvent, setSelectedEvent, handleDeleteEvent }) => {
+const EventDetails = ({ selectedEvent, setSelectedEvent, handleDeleteEvent, onEdit }) => {
   if (!selectedEvent) return null;
   return (
     <div className="mb-4 sm:mb-8 p-4 sm:p-6 rounded-xl border border-gray-200 bg-white shadow flex flex-col md:flex-row md:items-center md:justify-between relative overflow-hidden">
@@ -49,6 +49,16 @@ const EventDetails = ({ selectedEvent, setSelectedEvent, handleDeleteEvent }) =>
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
+          </svg>
+        </button>
+        <button
+          className="px-3 py-1 rounded bg-yellow-100 hover:bg-yellow-200 transition flex items-center"
+          onClick={onEdit}
+          title="Edit Event"
+          disabled={!selectedEvent.isLocal}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536M9 13l6.586-6.586a2 2 0 112.828 2.828L11.828 15.828a2 2 0 01-2.828 0L9 13zm0 0V21h8" />
           </svg>
         </button>
       </div>

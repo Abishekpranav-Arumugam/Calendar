@@ -10,16 +10,18 @@ const CalendarDayCell = ({ day, currentDate, today, events, handleSelectEvent, s
 
   return (
     <div
-      className={`relative flex flex-col bg-white rounded-lg shadow-sm  
+      // <-- UPDATED: Added dark mode classes
+      className={`relative flex flex-col bg-white dark:bg-gray-800/80 rounded-lg shadow-sm  
       h-24 md:h-28 lg:h-32 
       transition-all duration-300
-      hover:scale-105 hover:shadow-2xl hover:z-20 
-      p-1 sm:p-2`} // --- UPDATED: Removed conditional backgrounds and added bg-white ---
+      hover:scale-105 hover:shadow-2xl dark:hover:shadow-gray-900/60 hover:z-20 
+      p-1 sm:p-2`}
     >
       <div
         className={`flex items-center justify-center font-semibold text-sm w-7 h-7 rounded-full mb-1`}
       >
-        <div className={`${isToday ? 'bg-blue-500 text-white rounded-full flex items-center justify-center w-7 h-7' : isCurrentMonth ? 'text-gray-700' : 'text-gray-400'}`}>
+        {/* <-- UPDATED: Added dark mode classes */}
+        <div className={`${isToday ? 'bg-blue-500 text-white rounded-full flex items-center justify-center w-7 h-7' : isCurrentMonth ? 'text-gray-700 dark:text-gray-300' : 'text-gray-400 dark:text-gray-600'}`}>
           {day.date()}
         </div>
       </div>
@@ -46,13 +48,14 @@ const CalendarDayCell = ({ day, currentDate, today, events, handleSelectEvent, s
         })}
         
         {dayEvents.length > MAX_EVENTS_VISIBLE && (
+          // <-- UPDATED: Added dark mode class
           <div
             onClick={(e) => {
               e.stopPropagation();
               setModalDay(day);
               setModalEvents(dayEvents);
             }}
-            className="text-blue-600 font-bold text-xs hover:underline cursor-pointer"
+            className="text-blue-600 dark:text-blue-400 font-bold text-xs hover:underline cursor-pointer"
           >
             more
           </div>

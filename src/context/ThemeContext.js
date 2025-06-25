@@ -4,25 +4,24 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // Initialize state from localStorage or system preference
   const [theme, setTheme] = useState(() => {
+    // 1. Check for a saved theme in localStorage.
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       return savedTheme;
     }
-    // Check system preference if no theme is saved
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    
+    // 2. If no saved theme, ALWAYS default to 'light'.
+    // We are removing the system preference check.
+    return 'light';
   });
 
   useEffect(() => {
     const root = window.document.documentElement;
     
-    // Remove the old theme class
     root.classList.remove(theme === 'dark' ? 'light' : 'dark');
-    // Add the new theme class
     root.classList.add(theme);
 
-    // Save the theme to localStorage
     localStorage.setItem('theme', theme);
   }, [theme]);
 
@@ -37,5 +36,4 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the theme context easily
 export const useTheme = () => useContext(ThemeContext);

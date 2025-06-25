@@ -1,234 +1,386 @@
 [
   {
-    "title": "May Planning",
-    "date": "2024-05-03",
-    "time": "09:00",
+    "title": "Q1 Goal Setting",
+    "date": "2025-01-08",
+    "time": "10:00",
     "duration": 60,
-    "description": "Monthly planning meeting for May",
-    "color": "#f59e42"
-  },
-  {
-    "title": "Design Sprint",
-    "date": "2024-05-06",
-    "time": "11:00",
-    "duration": 120,
-    "description": "Kickoff for the design sprint",
+    "description": "Planning session for the first quarter.",
     "color": "#3b82f6"
   },
   {
-    "title": "Team Lunch",
-    "date": "2024-05-14",
-    "time": "13:00",
+    "title": "Design System Sync",
+    "date": "2025-01-16",
+    "time": "14:00",
     "duration": 90,
-    "description": "Team lunch at local restaurant",
+    "description": "Review updates to the design system components.",
     "color": "#10b981"
   },
   {
-    "title": "Release Review",
-    "date": "2024-05-22",
-    "time": "15:00",
-    "duration": 60,
-    "description": "Review the May release",
-    "color": "#f43f5e"
-  },
-  {
-    "title": "June Kickoff",
-    "date": "2024-06-01",
-    "time": "10:00",
-    "duration": 60,
-    "description": "Kickoff meeting for June",
-    "color": "#6366f1"
-  },
-  {
-    "title": "Sprint Planning",
-    "date": "2024-06-05",
-    "time": "09:30",
-    "duration": 90,
-    "description": "Sprint planning for June",
-    "color": "#f59e42"
-  },
-  {
-    "title": "Client Demo",
-    "date": "2024-06-13",
-    "time": "14:00",
-    "duration": 60,
-    "description": "Demo for the client",
-    "color": "#3b82f6"
-  },
-  {
-    "title": "Team Outing",
-    "date": "2024-06-21",
-    "time": "12:00",
-    "duration": 180,
-    "description": "Team outing and fun activities",
-    "color": "#10b981"
-  },
-  {
-    "title": "Team Standup",
-    "date": "2024-07-02",
-    "time": "10:00",
-    "duration": 30,
-    "description": "Daily team sync-up meeting",
-    "color": "#f43f5e"
-  },
-  {
-    "title": "Project Kickoff",
-    "date": "2024-07-07",
-    "time": "11:00",
-    "duration": 60,
-    "description": "Initial meeting to start the new project",
-    "color": "#6366f1"
-  },
-  {
-    "title": "Design Review",
-    "date": "2024-07-15",
-    "time": "14:00",
-    "duration": 90,
-    "description": "Review the latest design mockups",
-    "color": "#f59e42"
-  },
-  {
-    "title": "Client Call",
-    "date": "2024-07-19",
-    "time": "15:00",
+    "title": "Client Check-in",
+    "date": "2025-01-22",
+    "time": "11:30",
     "duration": 45,
-    "description": "Call with the client to discuss requirements",
-    "color": "#3b82f6"
-  },
-  {
-    "title": "Urgent Sync",
-    "date": "2024-07-27",
-    "time": "14:15",
-    "duration": 60,
-    "description": "Urgent team sync to resolve blockers",
-    "color": "#10b981"
-  },
-  {
-    "title": "Product Demo",
-    "date": "2024-08-05",
-    "time": "13:00",
-    "duration": 60,
-    "description": "Demonstration of the new product features",
+    "description": "Check-in call with the primary client.",
     "color": "#f43f5e"
   },
   {
-    "title": "1-on-1 with Manager",
-    "date": "2024-08-12",
+    "title": "January All-Hands",
+    "date": "2025-01-30",
     "time": "16:00",
-    "duration": 30,
-    "description": "Monthly one-on-one meeting with your manager",
-    "color": "#6366f1"
-  },
-  {
-    "title": "March Strategy Session",
-    "date": "2025-03-03",
-    "time": "10:00",
-    "duration": 90,
-    "description": "Strategy session for Q1 2025",
+    "duration": 60,
+    "description": "Company-wide monthly update meeting.",
     "color": "#f59e42"
   },
   {
-    "title": "Spring Hackathon",
-    "date": "2025-03-08",
-    "time": "09:00",
-    "duration": 240,
-    "description": "Annual spring hackathon",
-    "color": "#3b82f6"
-  },
-  {
-    "title": "Budget Review",
-    "date": "2025-03-17",
-    "time": "15:00",
-    "duration": 60,
-    "description": "Quarterly budget review",
-    "color": "#10b981"
-  },
-  {
-    "title": "March All-Hands",
-    "date": "2025-03-28",
-    "time": "11:00",
-    "duration": 60,
-    "description": "Company-wide all-hands meeting",
-    "color": "#f43f5e"
-  },
-  {
-    "title": "June Townhall",
-    "date": "2025-06-04",
-    "time": "09:00",
-    "duration": 60,
-    "description": "Monthly townhall meeting",
-    "color": "#6366f1"
-  },
-  {
-    "title": "Design Review",
-    "date": "2025-06-04",
-    "time": "11:00",
-    "duration": 45,
-    "description": "Review design proposals",
-    "color": "#f59e42"
-  },
-  {
-    "title": "Client Call",
-    "date": "2025-06-04",
-    "time": "14:00",
-    "duration": 30,
-    "description": "Call with client",
-    "color": "#10b981"
-  },
-  {
-    "title": "Mid-Year Review",
-    "date": "2025-06-12",
-    "time": "14:00",
-    "duration": 120,
-    "description": "Mid-year performance review",
-    "color": "#f59e42"
-  },
-  {
-    "title": "Team Picnic",
-    "date": "2025-06-18",
-    "time": "12:00",
-    "duration": 180,
-    "description": "Outdoor team picnic",
-    "color": "#3b82f6"
-  },
-  {
-    "title": "Client Workshop",
-    "date": "2025-06-29",
+    "title": "February Sprint Plan",
+    "date": "2025-02-05",
     "time": "09:30",
     "duration": 90,
-    "description": "Workshop with key clients",
+    "description": "Plan tasks for the upcoming sprint.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Marketing Strategy",
+    "date": "2025-02-13",
+    "time": "13:00",
+    "duration": 60,
+    "description": "Align with marketing on new campaigns.",
     "color": "#10b981"
   },
   {
-    "title": "July Planning",
-    "date": "2025-07-01",
-    "time": "09:00",
-    "duration": 60,
-    "description": "Monthly planning meeting for July",
+    "title": "Tech Architecture Review",
+    "date": "2025-02-20",
+    "time": "15:00",
+    "duration": 75,
+    "description": "In-depth session on the new architecture.",
     "color": "#f43f5e"
   },
   {
-    "title": "Product Launch",
-    "date": "2025-07-10",
+    "title": "UX Feedback",
+    "date": "2025-02-27",
     "time": "11:00",
+    "duration": 60,
+    "description": "Gather user experience feedback from stakeholders.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Q2 Strategy Session",
+    "date": "2025-03-06",
+    "time": "10:00",
     "duration": 120,
-    "description": "Launch of the new product line",
-    "color": "#6366f1"
+    "description": "Finalize strategy for the upcoming quarter.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Product Demo Day",
+    "date": "2025-03-14",
+    "time": "14:30",
+    "duration": 60,
+    "description": "Demonstrate new features to the leadership team.",
+    "color": "#10b981"
   },
   {
     "title": "Team Building",
-    "date": "2025-07-18",
-    "time": "13:00",
+    "date": "2025-03-20",
+    "time": "16:00",
     "duration": 90,
-    "description": "Team building activities",
+    "description": "Virtual team-building games and activities.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "End of Q1 Wrap-up",
+    "date": "2025-03-28",
+    "time": "11:00",
+    "duration": 60,
+    "description": "Review performance and outcomes from Q1.",
     "color": "#f59e42"
   },
   {
-    "title": "Release Party",
-    "date": "2025-07-25",
-    "time": "17:00",
-    "duration": 120,
-    "description": "Celebration party for the product release",
+    "title": "Q2 Kick-off Meeting",
+    "date": "2025-04-03",
+    "time": "10:00",
+    "duration": 60,
+    "description": "Planning session for the second quarter.",
     "color": "#3b82f6"
+  },
+  {
+    "title": "User Research Debrief",
+    "date": "2025-04-10",
+    "time": "13:00",
+    "duration": 75,
+    "description": "Share findings from recent user research.",
+    "color": "#10b981"
+  },
+  {
+    "title": "API Design Workshop",
+    "date": "2025-04-17",
+    "time": "15:00",
+    "duration": 90,
+    "description": "Collaborative session to design new API endpoints.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "April Town Hall",
+    "date": "2025-04-29",
+    "time": "16:00",
+    "duration": 60,
+    "description": "Company-wide updates and Q&A session.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "May Feature Planning",
+    "date": "2025-05-07",
+    "time": "09:00",
+    "duration": 90,
+    "description": "Plan out the features for the May development cycle.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Security Audit Meeting",
+    "date": "2025-05-15",
+    "time": "11:00",
+    "duration": 60,
+    "description": "Review the findings from the latest security audit.",
+    "color": "#10b981"
+  },
+  {
+    "title": "New Client Onboarding",
+    "date": "2025-05-21",
+    "time": "14:00",
+    "duration": 45,
+    "description": "Kick-off call with a new enterprise client.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "Hackathon Ideation",
+    "date": "2025-05-29",
+    "time": "15:30",
+    "duration": 60,
+    "description": "Brainstorming ideas for the upcoming company hackathon.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Mid-Year Reviews",
+    "date": "2025-06-04",
+    "time": "10:00",
+    "duration": 120,
+    "description": "Performance review planning and calibration.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Summer Release Sync",
+    "date": "2025-06-12",
+    "time": "14:00",
+    "duration": 90,
+    "description": "Plan the feature set for the major summer release.",
+    "color": "#10b981"
+  },
+  {
+    "title": "Team Lunch (Patio)",
+    "date": "2025-06-19",
+    "time": "12:30",
+    "duration": 90,
+    "description": "Celebrate recent successes with a team lunch.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "June All-Hands",
+    "date": "2025-06-26",
+    "time": "16:00",
+    "duration": 60,
+    "description": "Review of H1 and outlook for H2.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Q3 Planning",
+    "date": "2025-07-09",
+    "time": "10:00",
+    "duration": 60,
+    "description": "Planning session for the third quarter.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Content Strategy",
+    "date": "2025-07-17",
+    "time": "11:00",
+    "duration": 75,
+    "description": "Plan blog posts and whitepapers for the quarter.",
+    "color": "#10b981"
+  },
+  {
+    "title": "A/B Test Analysis",
+    "date": "2025-07-23",
+    "time": "14:30",
+    "duration": 45,
+    "description": "Analyze the results of the recent homepage A/B test.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "July Retrospective",
+    "date": "2025-07-31",
+    "time": "15:00",
+    "duration": 60,
+    "description": "Team retrospective to discuss wins and challenges.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "August Sprint Kick-off",
+    "date": "2025-08-06",
+    "time": "09:30",
+    "duration": 90,
+    "description": "Plan tasks for the August sprint.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "User Feedback Review",
+    "date": "2025-08-14",
+    "time": "13:30",
+    "duration": 60,
+    "description": "Deep dive into customer feedback from the last month.",
+    "color": "#10b981"
+  },
+  {
+    "title": "Investor Deck Prep",
+    "date": "2025-08-21",
+    "time": "15:00",
+    "duration": 90,
+    "description": "Prepare materials for the quarterly investor update.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "Intern Project Showcase",
+    "date": "2025-08-28",
+    "time": "11:00",
+    "duration": 120,
+    "description": "Summer interns present their projects.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Autumn Release Plan",
+    "date": "2025-09-04",
+    "time": "10:00",
+    "duration": 90,
+    "description": "Initial brainstorming for the autumn feature release.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "Tech Debt Workshop",
+    "date": "2025-09-11",
+    "time": "14:00",
+    "duration": 60,
+    "description": "Planning session to prioritize and tackle technical debt.",
+    "color": "#10b981"
+  },
+  {
+    "title": "Partner Sync",
+    "date": "2025-09-18",
+    "time": "11:30",
+    "duration": 45,
+    "description": "Technical call with a new integration partner.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "September All-Hands",
+    "date": "2025-09-25",
+    "time": "16:00",
+    "duration": 60,
+    "description": "Company-wide monthly update meeting.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Q4 Roadmap",
+    "date": "2025-10-08",
+    "time": "10:00",
+    "duration": 60,
+    "description": "Final quarter planning session for the year.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "UI Polish Session",
+    "date": "2025-10-16",
+    "time": "14:00",
+    "duration": 90,
+    "description": "A dedicated session to polish UI elements and flows.",
+    "color": "#10b981"
+  },
+  {
+    "title": "Competitor Analysis Review",
+    "date": "2025-10-22",
+    "time": "11:00",
+    "duration": 75,
+    "description": "Present findings from recent competitor analysis.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "Holiday Campaign Sync",
+    "date": "2025-10-30",
+    "time": "15:00",
+    "duration": 60,
+    "description": "Brainstorm and plan the end-of-year holiday campaigns.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "November Sprint",
+    "date": "2025-11-06",
+    "time": "09:30",
+    "duration": 90,
+    "description": "Plan tasks for the November development sprint.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "2026 Budget Planning",
+    "date": "2025-11-13",
+    "time": "13:00",
+    "duration": 120,
+    "description": "Initial meeting for the 2026 budget.",
+    "color": "#10b981"
+  },
+  {
+    "title": "Code Freeze Meeting",
+    "date": "2025-11-20",
+    "time": "15:30",
+    "duration": 45,
+    "description": "Prepare for the upcoming holiday code freeze.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "November Town Hall",
+    "date": "2025-11-27",
+    "time": "16:00",
+    "duration": 60,
+    "description": "Company-wide updates before the holidays.",
+    "color": "#f59e42"
+  },
+  {
+    "title": "Year-End Demo",
+    "date": "2025-12-04",
+    "time": "14:00",
+    "duration": 90,
+    "description": "Showcase all major accomplishments from the year.",
+    "color": "#3b82f6"
+  },
+  {
+    "title": "2026 Roadmap Workshop",
+    "date": "2025-12-11",
+    "time": "10:00",
+    "duration": 180,
+    "description": "High-level roadmap planning for the next year.",
+    "color": "#10b981"
+  },
+  {
+    "title": "Team Holiday Lunch",
+    "date": "2025-12-18",
+    "time": "12:30",
+    "duration": 120,
+    "description": "Holiday lunch to celebrate the end of the year.",
+    "color": "#f43f5e"
+  },
+  {
+    "title": "Final Sync of 2025",
+    "date": "2025-12-23",
+    "time": "11:00",
+    "duration": 30,
+    "description": "A final, brief team sync before the holiday break.",
+    "color": "#f59e42"
   }
 ]

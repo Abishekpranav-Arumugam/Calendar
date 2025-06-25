@@ -1,66 +1,77 @@
+// src/components/EventDetails.js
 import React from 'react';
 import dayjs from 'dayjs';
 
+// Helper icons for the buttons
+const TrashIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+    <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clipRule="evenodd" />
+  </svg>
+);
+const PencilIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+    <path fillRule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clipRule="evenodd" />
+  </svg>
+);
+
 const EventDetails = ({ selectedEvent, setSelectedEvent, handleDeleteEvent, onEdit }) => {
   if (!selectedEvent) return null;
+
+  const { title, description, date, startTime, endTime, color } = selectedEvent;
+  const eventStart = dayjs(startTime || date);
+  const eventEnd = dayjs(endTime || eventStart.add(1, 'hour'));
+  const isAllDay = !startTime && !endTime;
+
   return (
-    <div className="mb-4 sm:mb-8 p-4 sm:p-6 rounded-xl border border-gray-200 bg-white shadow flex flex-col md:flex-row md:items-center md:justify-between relative overflow-hidden">
-      <div className="absolute left-0 top-0 h-full w-2 rounded-l-xl" style={{ backgroundColor: selectedEvent.color }}></div>
-      <div className="flex-1 pl-6">
-        <div className="flex items-center gap-2 mb-1">
-          <span className="uppercase text-xs font-semibold text-green-600 tracking-wider">Event</span>
+    <div className="relative w-full bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200/80 flex p-4 mb-4">
+      {/* Colored side-bar */}
+      <div className="w-1.5 rounded-full mr-4" style={{ backgroundColor: color || '#6366f1' }}></div>
+
+      <div className="flex-1 space-y-2">
+        <div className="flex justify-between items-start">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-green-600">EVENT</span>
+            <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200"
+            >
+              Close
+            </button>
+            <button
+              onClick={() => handleDeleteEvent(selectedEvent)}
+              className="p-2 rounded-md bg-gray-100 text-red-500 hover:bg-red-100"
+              aria-label="Delete event"
+            >
+              <TrashIcon />
+            </button>
+            <button
+              onClick={onEdit}
+              className="p-2 rounded-md bg-yellow-100 text-yellow-600 hover:bg-yellow-200"
+              aria-label="Edit event"
+            >
+              <PencilIcon />
+            </button>
+          </div>
         </div>
-        <div className="text-2xl font-bold text-gray-800 mb-2">{selectedEvent.title}</div>
-        <div className="text-gray-600 mb-2">{selectedEvent.description}</div>
-        <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-          <div className="flex items-center gap-1">
-            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            {dayjs(selectedEvent.date).format('dddd, MMM D, YYYY')}
+        
+        {description && <p className="text-gray-600">{description}</p>}
+
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-gray-500 pt-2">
+          <div className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <span>{eventStart.format('dddd, MMM D, YYYY')}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            {selectedEvent.time} - {dayjs(`${selectedEvent.date} ${selectedEvent.time}`).add(selectedEvent.duration, 'minute').format('HH:mm')}
-          </div>
-          <div className="flex items-center gap-1">
-            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-            {selectedEvent.duration} min
-          </div>
+          {!isAllDay && (
+            <div className="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>{`${eventStart.format('HH:mm')} - ${eventEnd.format('HH:mm')}`}</span>
+            </div>
+          )}
         </div>
-      </div>
-      <div className="absolute top-4 right-4 flex gap-2">
-        <button
-          className="px-3 py-1 bg-gray-100 text-gray-700 rounded transition font-semibold shadow hover:bg-red-500 hover:text-white"
-          onClick={() => setSelectedEvent(null)}
-        >
-          Close
-        </button>
-        <button
-          className={`px-3 py-1 rounded transition font-semibold shadow flex items-center gap-1
-            ${selectedEvent.isLocal ? 'bg-red-100 hover:bg-red-200' : 'bg-gray-200 cursor-not-allowed'}
-          `}
-          onClick={() => {
-            if (selectedEvent.isLocal && handleDeleteEvent) {
-              handleDeleteEvent(selectedEvent);
-              setSelectedEvent(null);
-            }
-          }}
-          disabled={!selectedEvent.isLocal}
-          title={selectedEvent.isLocal ? 'Delete Event' : 'Only local events can be deleted'}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
-          </svg>
-        </button>
-        <button
-          className="px-3 py-1 rounded bg-yellow-100 hover:bg-yellow-200 transition flex items-center"
-          onClick={onEdit}
-          title="Edit Event"
-          disabled={!selectedEvent.isLocal}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536M9 13l6.586-6.586a2 2 0 112.828 2.828L11.828 15.828a2 2 0 01-2.828 0L9 13zm0 0V21h8" />
-          </svg>
-        </button>
       </div>
     </div>
   );

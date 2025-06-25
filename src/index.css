@@ -1,3 +1,121 @@
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -4;
+    background: linear-gradient(270deg, #f3f4f6, #e0e7ef, #dbeafe, #f0fdf4, #f3f4f6);
+    background-size: 400% 400%;
+    animation: gradientBG 18s ease-in-out infinite;
+    opacity: 1;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><text x='8%' y='18%' font-size='72' fill='%23e0e7ef' opacity='0.22' transform='rotate(-15 100 100)'>12</text><text x='75%' y='25%' font-size='54' fill='%23cbd5e1' opacity='0.16' transform='rotate(18 100 100)'>23</text><text x='38%' y='85%' font-size='90' fill='%23e5e7eb' opacity='0.19' transform='rotate(-8 100 100)'>7</text><text x='82%' y='75%' font-size='38' fill='%23cbd5e1' opacity='0.13' transform='rotate(20 100 100)'>19</text><text x='18%' y='65%' font-size='66' fill='%23e0e7ef' opacity='0.17' transform='rotate(-25 100 100)'>5</text><text x='60%' y='12%' font-size='44' fill='%23cbd5e1' opacity='0.13' transform='rotate(10 100 100)'>30</text><text x='50%' y='50%' font-size='80' fill='%23e0e7ef' opacity='0.13' transform='rotate(-12 100 100)'>1</text><text x='20%' y='40%' font-size='36' fill='%23cbd5e1' opacity='0.11' transform='rotate(7 100 100)'>27</text><text x='85%' y='60%' font-size='60' fill='%23e5e7eb' opacity='0.15' transform='rotate(-18 100 100)'>15</text></svg>");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .calendar-glass {
+    @apply bg-white/60 backdrop-blur-lg shadow-2xl border border-gray-200/50;
+  }
+}
+
+/* --- Animated Polygon Background Implementation --- */
+@keyframes move-shapes {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-45%, -55%) rotate(180deg) scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 0.7;
+  }
+}
+
+.polygon-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Base style for all shapes */
+.polygon-bg .shape {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  background-color: rgba(105, 141, 233, 0.196); /* A soft indigo color */
+  animation: move-shapes 30s linear infinite;
+}
+
+/* Specific shape definitions using clip-path */
+.shape-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.shape-diamond { /* A rotated square */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.shape-pentagon {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+.shape-hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Size and animation delay variations */
+.shape1 {
+  width: 1200px;
+  height: 1200px;
+  animation-duration: 50s;
+}
+.shape2 {
+  width: 900px;
+  height: 900px;
+  animation-duration: 45s;
+  animation-direction: reverse;
+  background-color: rgba(250, 96, 96, 0.1); /* Soft blue */
+}
+.shape3 {
+  width: 600px;
+  height: 600px;
+  animation-duration: 40s;
+}
+.shape4 {
+  width: 400px;
+  height: 400px;
+  animation-duration: 35s;
+  animation-direction: reverse;
+  background-color: rgba(255, 251, 0, 0.15); /* Slightly different indigo */
+}
+
+/* Add this keyframes block anywhere in your CSS file */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
